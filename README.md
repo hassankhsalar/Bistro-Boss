@@ -33,15 +33,3 @@ A web application built to streamline restaurant operations by managing orders, 
 
 ---
 
-## Installation and Setup
-
-### Prerequisites
-Ensure you have the following installed on your system:
-- **Node.js** (v14+)
-- **npm** or **yarn**
-- **Git**
-
-### Clone the Repository
-```bash
-git clone <repository-url>
-cd restaurant-order-management-portal
