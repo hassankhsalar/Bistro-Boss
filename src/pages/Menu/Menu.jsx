@@ -10,6 +10,7 @@ import desserimg from '../../assets/menu/dessert-bg.jpeg';
 import pizzaimg from '../../assets/menu/pizza-bg.jpg';
 import soupimg from '../../assets/menu/soup-bg.jpg';
 import saladimg from '../../assets/menu/salad-bg.jpg';
+import drinksimg from '../../assets/menu/salad-bg.jpg';
 
 
 const Menu = () => {
@@ -24,7 +25,7 @@ const Menu = () => {
     <div>
       <Helmet>
         <title>Bistro | Menu</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href="" />
       </Helmet>
       {/* main menu item */}
       <Cover img={menucover} title="Our Menu"></Cover>
@@ -39,6 +40,7 @@ const Menu = () => {
 
       <MenuCategory items={soup} title="soup" img={soupimg}></MenuCategory>
 
+      <MenuCategory items={drinks} title="drinks" img={drinksimg}></MenuCategory>
 
     </div>
   );
