@@ -8,6 +8,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
+import SocialLogin from "../components/SocialLogin";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -116,13 +117,18 @@ const Login = () => {
                 />
               </div>
             </form>
-            <p>
+            <div className="flex justify-center">
+            <SocialLogin></SocialLogin>
+            </div>
+            <div className="divider"></div>
+            <p className="px-6 text-center text-xl pb-4 font-normal">
               <small>
                 New here? <Link to="/signup">Create an Account</Link>
               </small>
             </p>
           </div>
         </div>
+        
       </div>
     </>
   );

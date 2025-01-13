@@ -4,8 +4,12 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../providers/AuthProvider";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
+import SocialLogin from "../components/SocialLogin";
 
 const SignUp = () => {
+  const axiosPublic = useAxiosPublic();
+
   const {
     register,
     handleSubmit,
@@ -24,14 +28,23 @@ const SignUp = () => {
       console.log(loggedUser);
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
-          console.log("user profile updated");
-          reset();
-          Swal.fire({
-            title: "User created successfully!",
-            icon: "success",
-            draggable: true,
+          //create user entry in the database
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId) {
+              console.log('user added to database')
+              reset();
+              Swal.fire({
+                title: "User created successfully!",
+                icon: "success",
+                draggable: true,
+              });
+              navigate("/");
+            }
           });
-          navigate('/');
         })
         .catch((error) => console.log(error));
     });
@@ -130,7 +143,11 @@ const SignUp = () => {
                 <input className="btn btn-primary" type="submit" />
               </div>
             </form>
-            <p>
+            <div className="flex justify-center">
+            <SocialLogin></SocialLogin>
+            </div>
+            <div className="divider"></div>
+            <p className="px-6">
               <small>
                 Already have an Account? <Link to="/login">Login here</Link>
               </small>
