@@ -1,15 +1,16 @@
-import React from "react";
+
 import { FaBook, FaCalendar, FaList, FaMailBulk, FaShoppingCart, FaUsers, FaUtensilSpoon, FaVoicemail } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useCart from "../Hooks/useCart";
+import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
 
     const [cart] = useCart();
 
     //todo: get isAdmin value from the database
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
   return (
     <div className="flex">
