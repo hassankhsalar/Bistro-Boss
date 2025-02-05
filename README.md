@@ -1,3 +1,9 @@
+## Screenshots
+
+![App Screenshot](https://i.ibb.co.com/YBnD3hX5/1.png)
+![App Screenshot](https://i.ibb.co.com/cSt6VbwY/3.png)
+![App Screenshot](https://i.ibb.co.com/HpDz4psc/2.png)
+
 # Restaurant Order Management Portal
 
 A web application built to streamline restaurant operations by managing orders, user authentication, and efficient backend processing. Built with modern technologies like **React**, **Tailwind CSS**, **Node.js**, **Express**, and **Firebase** for seamless performance.
